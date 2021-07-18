@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Input Form</title>
+        <link rel="stylesheet" href="index.css">
+
+        <!-- Google Fonts and Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Teko:wght@500&display=swap" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <div class="termsAndConditionsContainer" id="termsAndConditionsDocument">
+            <iframe src="termsAndConditions.html"></iframe>
+        </div>
+        <div class="window">
+        
+        <div class="form-container">
+            <form>
+                <table>
+                    <tr class="tableRow">
+                        <span class="form-heading">Employee Input Form</span>
+                    </tr>
+                    <tr class = "tableRow">
+                        <td class="leftCell">
+                            First Name
+                        </td>
+                        <td>
+                            <input type="text" name="employeeFirstName" id="firstName">
+                            <span class="warning warningEmployeeFirstName"></span>
+                        </td>
+                    </tr>
+                   
+                    <tr class = "tableRow">
+                        <td class="leftCell">
+                            Last Name
+                        </td>
+                        <td class = "rightCell">
+                            <input type="text" name="employeeLastName" id="lastName">
+                            <span class="warning warningEmployeeLastName"></span>
+                        </td>
+                    </tr>
+                    
+                    <tr class = "tableRow">
+                        <td class="leftCell">
+                            Gender
+                        </td>
+                        <td class = "rightCell">
+                            <label for="gender" >
+                                Male
+                            </label>
+                            <input type="radio" name="gender" id="Male">
+
+                            <label for="gender">
+                                Female
+                            </label>
+                            <input type="radio" name="gender">
+                        </td>
+                    </tr>
+
+                    <tr class = "tableRow">
+                        <td class="leftCell">
+                            Marital Status
+                        </td>
+                        <td class = "rightCell">
+                            <label for="maritalStatus">
+                                Married
+                            </label>
+                            <input type="radio" name="maritalStatus" id = "Married">
+
+                            <label for="gender">
+                                Single
+                            </label>
+                            <input type="radio" name="maritalStatus" id = "Single">
+                        </td>
+                    </tr>
+
+                    <tbody class="spouse-hidden">
+                    <tr class="tableRow">
+                        <td colspan="2" > <hr></td>
+
+                    </tr>
+                    
+                    
+                    
+                    <tr class="tableRow ">
+                        
+                        <td class="leftCell ">
+                            Spouse's First Name
+                        </td>
+                        <td >
+                            <input type="text" name="spouseFirstName" id= "spouseFirstName">
+                            <span class="warning warningSpouseFirstName"></span>
+                        </td>
+                    </tr>
+
+                    <tr class="tableRow">
+                        
+                        <td class="leftCell " colspan="1">
+                            Spouse's Last Name
+                        </td>
+                        <td >
+                            <input type="text" name="spouseLastName" id="spouseLastName">
+                            <span class="warning warningSpouseLastName"></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                
+
+
+                    <tr class = "tableRow">
+                        <td colspan="2" class="leftCell">
+                            Other Details
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"  class = "leftCell">
+                            <span class="warning">Some text</span>
+                            <textarea placeholder="Enter other details ..." class="otherDetails"></textarea>
+                        </td>
+                    </tr>
+                    
+
+                    <tr class = "tableRow">
+                        <td colspan="2" class="leftCell">
+                            <input type="checkbox" id="termsAccepted"> <span class="acceptDeclaration">I accept the <button type = "button" class="buttonAsLink" id="termsAndConditonsLink">Terms & Conditions</button></span>
+                            <span class="warning notAcceptedMessage"></span>
+                        </td>
+                        
+                    </tr>
+                    <tr class = "tableRow">
+                        <td  class="leftCell">
+                            <span id=reset><input type="reset" id = "resetButton"></span>
+                            <div class="tooltip"><span class="material-icons">warning</span> <span class="tooltip-message"></span></div>
+                        </td>
+
+                        <td  class = "rightCell">
+                            <input type="button" value="Save" id="submitButton">
+                        </td>
+                        
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/8.7.1/firebase-app.js"></script>
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="/__/firebase/8.7.1/firebase-analytics.js"></script>
+        
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+        <script>
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            db.settings({timeStampsInSnapshots: true});
+        </script>
+        <script src="index.js"></script>
+    </body>
+</html>

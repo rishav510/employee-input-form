@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+h2{
+    text-align: center;
+}
+body{
+    background-color: white;
+}
+
+article{
+    text-align: justify;
+}
+
