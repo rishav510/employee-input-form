@@ -53,7 +53,7 @@ function addNameFieldWarning(inputField, warningClass)
     else if(validNameRegex.test(inputField.value) === false && !stillInvalid)
     {   
         nameTextBox.style.display='block';
-        nameTextBox.innerText = "*" + nameFieldLabel + invalidNameEntryMessage;
+        nameTextBox.innerText = "* " + nameFieldLabel + invalidNameEntryMessage;
         inputField.focus();
         stillInvalid = true;
         return false;
@@ -106,14 +106,14 @@ termsAndConditions.addEventListener('click',(event)=>{
     if(!termsAndConditions.firstChild.contains(event.target))
         termsAndConditions.style.display = 'none';
 })
-// resetButtonContainer.addEventListener('mouseenter',function(){
-//     toolTip.style.opacity = 1;
-//     toolTipMessage.innerHTML = resetWarningMessage;
-// });
+resetButtonContainer.addEventListener('mouseenter',function(){
+    toolTip.style.opacity = 1;
+    toolTipMessage.innerHTML = resetWarningMessage;
+});
 
-// resetButtonContainer.addEventListener('mouseleave',function(){
-//     toolTip.style.opacity = 0;
-// });
+resetButtonContainer.addEventListener('mouseleave',function(){
+    toolTip.style.opacity = 0;
+});
 
 resetButton.addEventListener('click', ()=>{
     setTimeout(()=>{

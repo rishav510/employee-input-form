@@ -1,15 +1,16 @@
 :root{
-    --color-primary-light: #a7f5e3;
+    --color-primary-light: #d0ece6;
     --color-primary-variant1-light:#00695c;
     --color-warning: red;
     --color-background-tooltip: white;
     --color-modal: rgba(0,0,0,0.5);
+    --color-link: #069;
     --font-primary: 'Open Sans';
     --font-warning: 'Roboto Mono';
-    --font-size-warning: .3em;
+    --font-size-warning: 0.7em;
     --font-size-heading: 1.5em;
     --shadow-tooltip: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    --shadow-form: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --shadow-form: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
 }
 
@@ -21,13 +22,91 @@
     font-weight: bold;
 }
 
-.buttonAsLink{
-    background: none !important;
-    border: none !important;
-    color: #069;
-    font-family: arial, sans-serif;
-    text-decoration: underline;
-    cursor: pointer;
+.window{
+    padding: 32px;  
+    height: max-content;
+    position: absolute;
+    left: 50%; 
+    transform: translate(-50%, 0%);
+}
+
+.form-container{
+    background-color: var(--color-primary-light);
+    position: relative;
+    width: max-content;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-form);    
+}
+
+
+.form-heading{
+    display:block;
+    text-align: center;
+    font-size: var(--font-size-heading);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 16px;
+}
+
+.tableRow{
+    vertical-align: top;
+}
+
+.leftCell{
+    width: 180px;
+}
+
+td{
+    padding: 8px 0;
+}
+
+.rightCell{
+    float:right;
+}
+
+input[type="text"]{
+    border: none;
+    width: 200px;
+    height: 32px;
+    border: 2px solid var(--color-primary-variant1-light);
+    border-radius: 5px;
+    padding: 8px;
+    font-size: medium;
+}
+
+label{
+    display: inline-block;
+    width: 60px;
+    margin-left: 16px;
+}
+
+.spouse-hidden{
+    display:none;
+}
+
+hr{
+    margin-top: 8px;
+    border: 1px solid var(--color-primary-variant1-light);
+    border-radius: 1px;
+    background-color: var(--color-primary-variant1-light);
+}
+
+textarea{
+    border: 2px solid var(--color-primary-variant1-light);
+    border-radius: 5px;
+    height: 150px;
+    resize: none;
+    width: 100%;
+    padding: 8px;
+    font-size: medium;
+}
+
+textarea::placeholder{
+    font-size: medium;
+}
+
+input[type="checkbox"]{
+    vertical-align: middle;
 }
 
 .termsAndConditionsContainer{
@@ -41,6 +120,7 @@
     z-index: 2;
     padding: 10%;
     background-color: var(--color-modal); 
+
 }
 
 iframe{
@@ -53,58 +133,7 @@ iframe{
     transform: translate(-50%,-80%);
     box-shadow: var(--shadow-tooltip);
     border: none;
-}
-
-.form-container{
-    background-color: var(--color-primary-light);
-    position: relative;
-    width: max-content;
-    padding: 16px;
     border-radius: 10px;
-    box-shadow: var(--shadow-form);    
-}
-
-.tableRow{
-
-    vertical-align: top;
-
-}
-.leftCell{
-    width: 180px;
-
-}
-
-input[type="text"]{
-    border: none;
-    width: 200px;
-    height: 32px;
-    border: 2px solid var(--color-primary-variant1-light);
-    border-radius: 5px;
-    padding: 8px;
-    font-size: medium;
-}
-
-textarea{
-    border: 2px solid var(--color-primary-variant1-light);
-    border-radius: 5px;
-    height: 150px;
-    resize: none;
-    width: 100%;
-    padding: 8px;
-    font-size: medium;
-}
-textarea::placeholder{
-    font-size: medium;
-}
-
-td{
-    padding: 8px 0;
-}
-
-label{
-    display: inline-block;
-    width: 60px;
-    margin-left: 16px;
 }
 
 input[type="reset"], input[type="submit"], input[type="button"]{
@@ -113,41 +142,19 @@ input[type="reset"], input[type="submit"], input[type="button"]{
     color: white;
     border: none;
     border-radius: 10px;
-
 }
+
 button[type=submit]{
     float:right;
 }
 
-.rightCell{
-    float:right;
-}
-
-hr{
-    margin-top: 8px;
-    border: 1px solid var(--color-primary-variant1-light);
-    border-radius: 1px;
-    background-color: var(--color-primary-variant1-light);
-}
-
 .acceptDeclaration{
     font-size: 0.8em;
-    margin-left: 16px;
 }
-
-.spouse-hidden{
-    display:none;
-}
-
-
 
 input[type="reset"]:hover, input[type="submit"]:hover, input[type="button"]:hover{
     background-color: #33877d;
     transform: scale(105%);
-}
-
-input[type="checkbox"]{
-    height: 16px;   
 }
 
 .tooltip{
@@ -162,39 +169,66 @@ input[type="checkbox"]{
     color:var(--color-warning);   
     box-shadow: var(--shadow-tooltip);
 }
+
+.tooltip-visible{
+    opacity: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .warning{
     font-family: var(--font-warning),'sans-serif';
     display: none;
     color: var(--color-warning);
-    font-size: small;
+    font-size: var(--font-size-warning);
     padding-bottom: 4px;
     width: 200px;
 }
-.tooltip-visible{
-    opacity: 100%;
-}
+
 
 body{
     overflow: scroll;
     height: 150%;
 }
 
-.window{
-    padding: 32px;  
-    height: max-content;
-    position: absolute;
-    left: 50%; 
-    transform: translate(-50%, 0%);
-}
 
-.form-heading{
-    display:block;
-    text-align: center;
-    font-kerning: 2em;
 
-}
 
 .material-icons{
     font-size: 18px;
     vertical-align: bottom;   
+}
+
+.buttonAsLink{
+    background: none !important;
+    border: none !important;
+    color: var(--color-link);
+    font-family: arial, sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
 }
