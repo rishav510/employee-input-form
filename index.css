@@ -53,6 +53,7 @@ iframe{
     left: 50%;
     transform: translate(-50%,-80%);
     box-shadow: var(--shadow-tooltip);
+    border-radius: 10px;
     border: none;
 }
 
