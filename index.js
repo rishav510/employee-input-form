@@ -14,9 +14,8 @@ const termsNotAcceptedWarning = document.getElementsByClassName('notAcceptedMess
 const warningClasses = ['warningEmployeeFirstName', 'warningEmployeeLastName', 'warningSpouseFirstName', 'warningSpouseLastName', 'notAcceptedMessage'];
 const toolTipMessage = document.getElementsByClassName('tooltip-message')[0];
 const termsAndConditionsLink = document.getElementById('termsAndConditonsLink');
-console.log(termsAndConditionsLink);
 const termsAndConditions = document.getElementById('termsAndConditionsDocument');
-console.log(termsAndConditions);
+
 
 const invalidNameEntryMessage = " cannot have spaces, digits or special characters.";
 const termsNotAcceptedMessage = " Terms and Conditions need to be accepted.";
@@ -86,6 +85,7 @@ singleRadio.addEventListener('change', function(){
     if(this.checked)
     for(element of spouseSection)
         element.classList.add('spouse-hidden');
+        element.classList.remove('spouse-visible')
 });
 
 marriedRadio.addEventListener('change', function(){
@@ -93,30 +93,31 @@ marriedRadio.addEventListener('change', function(){
     if(this.checked)
         for (element of spouseSection)
         {
+            console.log(element);
             element.classList.remove('spouse-hidden');
             element.classList.add('spouse-visible');
         }
 });
 
-termsAndConditionsLink.addEventListener('click', ()=>{
+termsAndConditionsLink.addEventListener('click', () => {
     termsAndConditions.style.display = 'block';
 });
 
-termsAndConditions.addEventListener('click',(event)=>{
+termsAndConditions.addEventListener('click', (event) => {
     if(!termsAndConditions.firstChild.contains(event.target))
         termsAndConditions.style.display = 'none';
 })
-resetButtonContainer.addEventListener('mouseenter',function(){
+resetButtonContainer.addEventListener('mouseenter', () => {
     toolTip.style.opacity = 1;
     toolTipMessage.innerHTML = resetWarningMessage;
 });
 
-resetButtonContainer.addEventListener('mouseleave',function(){
+resetButtonContainer.addEventListener('mouseleave', () => {
     toolTip.style.opacity = 0;
 });
 
-resetButton.addEventListener('click', ()=>{
-    setTimeout(()=>{
+resetButton.addEventListener('click', () => {
+    setTimeout(() => {
         singleRadio.checked = true;
         maleRadio.checked = true;
         employeeFirstName.focus();
@@ -126,7 +127,7 @@ resetButton.addEventListener('click', ()=>{
     
 });
 
-submitButton.addEventListener('click', ()=>{
+submitButton.addEventListener('click', () => {
     
     let spouseLastNameOK,spouseFirstNameOK,employeeLastNameOK,employeeFirstNameOK;
     if(!singleRadio.checked)
