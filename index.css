@@ -119,6 +119,13 @@ input[type="reset"], input[type="submit"], input[type="button"]{
     border-radius: 10px;
 
 }
+
+.leftLabel{
+    margin-left: -200px;
+}
+.rightLabel{
+    margin-left: 40px;
+}
 button[type=submit]{
     float:right;
 }

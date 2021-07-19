@@ -16,7 +16,6 @@ const toolTipMessage = document.getElementsByClassName('tooltip-message')[0];
 const termsAndConditionsLink = document.getElementById('termsAndConditonsLink');
 const termsAndConditions = document.getElementById('termsAndConditionsDocument');
 
-
 const invalidNameEntryMessage = " cannot have spaces, digits or special characters.";
 const termsNotAcceptedMessage = " Terms and Conditions need to be accepted.";
 const resetWarningMessage = "All entered data will be lost!"
@@ -77,7 +76,6 @@ function removeWarning(warningClass)
     const warningElement = document.getElementsByClassName(warningClass)[0];
     warningElement.style.display = 'none';
 }
-
 
 
 singleRadio.addEventListener('change', function(){
