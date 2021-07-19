@@ -21,7 +21,7 @@ const invalidNameEntryMessage = " cannot have spaces, digits or special characte
 const termsNotAcceptedMessage = " Terms and Conditions need to be accepted.";
 const resetWarningMessage = "All entered data will be lost!"
 const acceptedMessage = "Thank You";
-const validNameRegex = /^[A-Za-z]+[ ]*$/;
+const validNameRegex = /^\s*\b[A-Za-z]+[ ]*$/;
 const containsNumberRegex = /\d/;
 
 
